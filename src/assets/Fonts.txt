@@ -1,0 +1,9 @@
+Fonts used in this design:
+
+Font: Roboto
+Author: Christian Robertson
+Url: https://fonts.google.com/specimen/Roboto
+
+Font: Titan One
+Author: Rodrigo Fuenzalida
+Url: https://fonts.google.com/specimen/Titan+One

@@ -1,23 +1,23 @@
 .button {
     width: 180px;
     height: 40px;
-    background-image: linear-gradient(rgb(214, 202, 254), rgb(158, 129, 254));
+    background-image: linear-gradient(rgb(243, 224, 50), rgb(235, 182, 7));
     border: none;
     border-radius: 50px;
     color: rgb(27, 15, 15);
-    font-weight: 600;
+    font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
     cursor: pointer;
-    box-shadow: 1px 3px 0px rgb(139, 113, 255);
+    box-shadow: 1px 3px 0px rgb(172, 69, 9);
     transition-duration: .3s;
   }
   
   .button:active {
     transform: translate(2px ,0px);
-    box-shadow: 0px 1px 0px rgb(231, 113, 255);
+    box-shadow: 0px 1px 0px rgb(243, 199, 4);
     padding-bottom: 1px;
   }
   
