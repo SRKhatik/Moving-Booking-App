@@ -3,8 +3,10 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
 import Auth from "./pages/Auth/Auth";
 import Landingpage from "./pages/Landingpage/landingpage";
+import MovieDetails from "./pages/MovieDetails/MovieDetails";
 import { themeContext } from "./Context";
 import { useContext } from "react";
+
 
 function App() {
   const theme =useContext(themeContext)
@@ -20,6 +22,8 @@ function App() {
         <Route exact path="/login" element={<Auth/>} />
         <Route exact path="/register" />
         <Route exact path="/" element={<Landingpage/>} />
+        <Route exact path="/movie/:movieId/details" element={<MovieDetails/>
+        } />
       </Routes>
     </Router>
     </div>

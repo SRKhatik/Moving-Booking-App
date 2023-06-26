@@ -1,10 +1,13 @@
 import React from "react";
-import girl from "../../assets/girl.png";
 
 function Cards() {
   return (
-    <div className="row m-5 justify-content-center flex-sm-wrap">
-    <div
+
+    <div className="row mt-5 p-2 justify-content-center flex-sm-wrap" style={{background: "rgba(0, 0, 0, 0.1)",
+    backdropFilter: "blur(10px)"}}>
+      <h1 style={{ color: "black", fontWeight: 900, textDecoration: "underline" }}>BOOK YOUR FAVORITE SHOW NOW !!</h1>
+      
+    <div 
       className="card m-2 row justify-content-center"
       style={{
         backgroundImage: "linear-gradient(150deg, #f731db, #4600f1 100%)",
@@ -19,7 +22,7 @@ function Cards() {
       </h4>
     </div>
     <div
-      className="card m-2 row justify-content-center"
+      className="cardsize card m-2 row justify-content-center"
       style={{
         backgroundImage: "linear-gradient(150deg, 	#008080, #20002c 100% )",
         width: "14rem",
@@ -33,7 +36,7 @@ function Cards() {
       </h4>
     </div>
     <div
-      className="card m-2 row justify-content-center"
+      className="cardsize card m-2 row justify-content-center"
       style={{
         backgroundImage: "linear-gradient(150deg, #39ef74, #4600f1 100%)",
         width: "14rem",
@@ -48,7 +51,7 @@ function Cards() {
     </div>
    
     <div
-      className="card m-2 row justify-content-center"
+      className="cardsize card m-2 row justify-content-center"
       style={{
         backgroundImage: "linear-gradient(150deg, #200122, #6f0000)",
         width: "14rem",
@@ -62,7 +65,7 @@ function Cards() {
       </h4>
     </div>
     <div
-      className="card m-2 row justify-content-center"
+      className="cardsize card m-2 row justify-content-center w-14 h-15"
       style={{
         backgroundImage: "linear-gradient(150deg, #f731db, #4600f1 100%)",
         width: "14rem",
@@ -74,10 +77,9 @@ function Cards() {
   fontStyle: "italic"}}>
         IMAX Films SHOW 
       </h4>
+    </div>   
     </div>
-    
-        
-    </div>
+  
   );
 }
 

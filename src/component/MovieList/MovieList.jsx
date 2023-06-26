@@ -9,8 +9,9 @@ function MovieList(props) {
   };
 
   return (
-    <div className=" mt-5 mb-5 py-3">
-      <h1>Recommended Movies</h1>
+    <div className="py-3">
+<h1 className="m-5" style={{ color: "black", fontWeight: 900, textDecoration: "underline" }}>RECOMMENDED MOVIES</h1>
+
       <div
         style={{ flexFlow: "wrap" }}
         className=" d-flex justify-content-center"

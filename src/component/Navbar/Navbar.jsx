@@ -28,7 +28,7 @@ const Navbar = () => {
         </div>
 
         <div className="w-50">
-          <Form.Control size="sm" type="text" placeholder="Search Movie" />
+          <Form.Control size="sm" type="text" placeholder="Search Movie"/>
         </div>
 
         <Toggle />
