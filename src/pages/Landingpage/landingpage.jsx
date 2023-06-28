@@ -3,7 +3,7 @@ import Navbar from "../../component/Navbar/Navbar";
 import Carousel from "../../component/Carousel/Carousel";
 import Cantainer from "../../component/Cantainer/Cantainer";
 import Cards from "../../component/Cards/Cards";
-import { getAllMovies } from "../../api/movie.api";
+import { getAllMovies } from "../../api/movies.api";
 import { CSpinner } from "@coreui/react";
 import MovieList from "../../component/MovieList/MovieList";
 

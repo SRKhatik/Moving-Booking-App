@@ -6,6 +6,7 @@ import Landingpage from "./pages/Landingpage/landingpage";
 import MovieDetails from "./pages/MovieDetails/MovieDetails";
 import { themeContext } from "./Context";
 import { useContext } from "react";
+import Admin from "./pages/Admin/Admin";
 
 
 function App() {
@@ -22,8 +23,8 @@ function App() {
         <Route exact path="/login" element={<Auth/>} />
         <Route exact path="/register" />
         <Route exact path="/" element={<Landingpage/>} />
-        <Route exact path="/movie/:movieId/details" element={<MovieDetails/>
-        } />
+        <Route exact path="/movie/:movieId/details" element={<MovieDetails/> } />
+        <Route exact path="/admin" element={ <Admin/>} />
       </Routes>
     </Router>
     </div>

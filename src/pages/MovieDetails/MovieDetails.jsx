@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../../component/Navbar/Navbar";
 import ReactPlayer from "react-player";
 import { useParams } from "react-router-dom";
-import { getMovieById } from "../../api/movie.api";
+import { getMovieById } from "../../api/movies.api";
 import { CSpinner } from "@coreui/react";
 
 function MovieDetails() {
@@ -27,7 +27,7 @@ function MovieDetails() {
       <Navbar />
       {movieDetails ? (
         <>
-          <div className="bg-dark mt-5" style={{ border: "3px solid black" }}>
+          <div className="bg-dark mt-5 " style={{ border: "3px solid black" }}>
             <ReactPlayer
               url={movieDetails.trailerUrl}
               controls={true}
@@ -35,7 +35,8 @@ function MovieDetails() {
               height="50vh"
             />
           </div>
-          <div style={{ padding: "40px" }} className="row my-4 py-10">
+    
+          <div style={{ padding: "40px"}} className="row my-4 py-10">
             <div className="col-lg-3 col-md-12">
               <img
                 src={movieDetails.posterUrl}
@@ -45,7 +46,7 @@ function MovieDetails() {
               />
             </div>
             <br />
-            <div className="col-lg-9 col-md-12">
+            <div className="col-lg-9 col-md-12 ">
               <h2 className="font-weight-bold">About the Movie</h2>
 
               <div>
@@ -92,7 +93,7 @@ function MovieDetails() {
         </>
       ) : (
         <div className="d-flex justify-content-center mt-5">
-          <CSpinner color="primary" variant="grow" />
+          <CSpinner color="warning" variant="grow" />
         </div>
       )}
     </div>
