@@ -12,7 +12,8 @@ export const getAllMovies = async () => {
     });
 
     return res.data;
-  } catch (err) {
+  } 
+  catch (err) {
     console.log(err);
   }
 };
