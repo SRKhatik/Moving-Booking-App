@@ -11,6 +11,6 @@ try{
     return res;
 }
 catch(err){
-    console.log(er)
+    console.log(err)
 }
 }

@@ -9,7 +9,7 @@ function CardsList(props) {
     <div className="row px-1">
       <div className="col">
         <CWidgetComponent
-        id={keys.THEATRE}
+          id={keys.THEATRE}
           value={counterInfo.theatres}
           progress={{ value: counterInfo.theatres }}
           icon={<Building style={{ fontSize: "40px", color: "white" }} />}
@@ -19,9 +19,9 @@ function CardsList(props) {
       </div>
       <div className="col">
         <CWidgetComponent
-         id={keys.MOVIE}
+          id={keys.MOVIE}
           value={counterInfo.movies}
-          progress={{ value: counterInfo.movies }}
+          progress={{ value: counterInfo.movies}}
           icon={<Film style={{ fontSize: "40px", color: "white" }} />}
           text="Number of Movies"
           title="Movies"
@@ -29,7 +29,7 @@ function CardsList(props) {
       </div>
       <div className="col">
         <CWidgetComponent
-         id={keys.BOOKING}
+          id={keys.BOOKING}
           value={counterInfo.bookings}
           progress={{ value: counterInfo.bookings }}
           icon={<CardList style={{ fontSize: "40px", color: "white" }} />}
@@ -39,7 +39,7 @@ function CardsList(props) {
       </div>
       <div className="col">
         <CWidgetComponent
-         id={keys.USER}
+          id={keys.USER}
           value={counterInfo.users}
           progress={{ value: counterInfo.users }}
           icon={<PeopleFill style={{ fontSize: "40px", color: "white" }} />}

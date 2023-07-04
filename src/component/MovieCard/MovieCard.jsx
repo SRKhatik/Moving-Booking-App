@@ -1,17 +1,33 @@
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { Link } from 'react-router-dom';
-import { ArrowRightCircleFill,HeartFill} from 'react-bootstrap-icons';
+import { useState } from 'react';
 
 function MovieCard({movie}){
 
     const {name,description,posterUrl, language, casts, director, _id} = movie;
+    
+    
+    const [count,setCount]=useState(100)
+    const [isLiked,setIsLiked] =useState(false);
 
-    console.log(posterUrl);
+     const like =()=>{
+      console.log(count)
+
+      if(isLiked){
+        setCount(count-1)
+        setIsLiked(false)
+      } else{
+        setCount(count+1)
+        setIsLiked(true)
+      }
+    }
+
 
     return  <>
-    <Link key={_id} to={`/movie/${_id}/details`}>
-     <Card className='mx-3 my-3' style={{ width: '18rem', backgroundColor:"black",color:"gray"}} >
+      
+     <Card className='mx-3 my-3' style={{ width: '18rem',cursior:"pointer",backgroundColor:"black",color:"gray"}} >
+   
       <Card.Img style={{height:"25rem"}} variant="top" src={posterUrl} />
       <Card.Body>
         <Card.Title>{name}</Card.Title>
@@ -36,19 +52,13 @@ function MovieCard({movie}){
        </ListGroup.Item>
       </ListGroup>
       <Card.Body>
-
-        <div style={{fontSize:"1rem"}} className='d-flex align-items-center justify-content-around'>
-        <HeartFill style={{color:"red"}}/>700k
-        <span className='d-flex fs-6 align-items-center '>SEE TRAILER </span>
-              <Card.Link href='#'>
-                 <ArrowRightCircleFill style={{color:"green"}}/>
-                </Card.Link>
-        </div>
-        
+        <div style={{fontSize:"1.5rem"}} className='d-flex align-items-center justify-content-between'>
+        <i className="bi bi-heart-fill justify-content-around" onClick={like} style={{color: (isLiked)? "red":"gray"}}/> {count }
+        <Card.Link href={`/movie/${_id}/details`}>SEE TRAILER <i className="bi bi-arrow-right-circle-fill"></i></Card.Link>
+        </div> 
       </Card.Body>
     </Card>
-
-    </Link>
+ 
     </>
    
 }

@@ -1,4 +1,4 @@
-import { Cell, Column, HeaderCell, Table } from "rsuite-table";
+import { Cell, Column, HeaderCell, Table} from "rsuite-table";
 
 
 const ImageCell = ({ rowData, dataKey, ...rest }) => (

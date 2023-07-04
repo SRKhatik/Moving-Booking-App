@@ -4,7 +4,8 @@ import App from './App.jsx'
 import './index.css'
 import '@coreui/coreui/dist/css/coreui.min.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'rsuite-table/dist/css/rsuite-table.css'
+import 'rsuite-table/dist/css/rsuite-table.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import { ThemeProvider } from './Context.jsx'
 ReactDOM.createRoot(document.getElementById('root')).render(

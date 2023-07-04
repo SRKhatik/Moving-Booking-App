@@ -1,6 +1,6 @@
 import React, { useEffect, useState,createContext } from "react";
 import Navbar from "../../component/Navbar/Navbar";
-import CardsList from "../../component/CardList/CardList";
+import CardsList from "../../component/CardAdmin/CardAdmin";
 import { getAllMovies } from "../../api/movies.api";
 import { getAllBookings } from "../../api/booking.api";
 import { getAllTheatres } from "../../api/theatre.api";
@@ -11,12 +11,6 @@ import MoviesTable from "../../component/Tables/MoviesTable/MoviesTable";
 import BookingsTable from "../../component/Tables/Bookings/Bookings";
 import UsersTable from "../../component/Tables/Users/Users";
 
-
-const dataList = [
-  { id: 1, name: 'a', email: 'a@email.com', avartar: '...' },
-  { id: 2, name: 'b', email: 'b@email.com', avartar: '...' },
-  { id: 3, name: 'c', email: 'c@email.com', avartar: '...' }
-];
 
 export const WidgetContext = createContext();
 
@@ -49,18 +43,20 @@ const Admin = () => {
     counterInfo.theatres = theatres.data.length;
     setCounterInfo({ ...counterInfo });
   };
-  const fetchBookings = async () => {
-    const bookings = await getAllBookings();
-    setBookingsList(bookings.data);
 
-    counterInfo.bookings = bookings.data.length;
-    setCounterInfo({ ...counterInfo });
-  };
+
+const fetchBookings=async()=>{
+  const bookings= await getAllBookings()
+  setBookingsList(bookings.data)
+
+  counterInfo.bookings = bookings.data.length;
+  setCounterInfo({...counterInfo})
+}
   const fetchMovies = async () => {
     const movies = await getAllMovies();
-    setMoviesList(movies);
+    setMoviesList(movies.data);
 
-    counterInfo.movies = movies.length;
+    counterInfo.movies = movies.data.length;
     setCounterInfo({ ...counterInfo });
   };
   const fetchUsers = async () => {
@@ -99,12 +95,13 @@ const Admin = () => {
     } else if (id === keys.USER) {
       setShowUsersTable(true);
     }
+    console.log(showBookingsTable);
   };
   return (
     <>
       <div>
         <Navbar />
-        <div className="container mt-5 cantaier-fulid vh-100%">
+        <div className="container mt-5 mb-5 cantaier-fulid vh-100%">
           <h2 className="text-center">
             Welcome, {localStorage.getItem("name")}!
           </h2>

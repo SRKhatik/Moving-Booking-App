@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from "react";
-import Navbar from "../../component/Navbar/Navbar";
-import ReactPlayer from "react-player";
-import { useParams } from "react-router-dom";
-import { getMovieById } from "../../api/movies.api";
 import { CSpinner } from "@coreui/react";
+import { useEffect, useState } from "react";
+import ReactPlayer from "react-player";
+import { Link, useParams } from "react-router-dom";
+import Navbar from "../../component/Navbar/Navbar";
+import { getMovieById } from "../../api/movies.api";
+import { Button } from "react-bootstrap";
 
 function MovieDetails() {
-  const [movieDetails, setMovieDetails] = useState(null);
+  const [movieDetails, setMovieDetails] = useState( );
   const { movieId } = useParams();
 
   const fetchMovieDetails = async () => {
-    try {
-      const movieResponse = await getMovieById(movieId);
-      setMovieDetails(movieResponse);
-    } catch (error) {
-      console.error("Error fetching movie details:", error);
-    }
+ 
+    const movieDetails = await getMovieById(movieId);
+
+    setMovieDetails(movieDetails.data);
+    
   };
 
   useEffect(() => {
@@ -83,9 +83,11 @@ function MovieDetails() {
                 </div>
 
                 <div className="my-3">
-                  <button className="btn btn-danger text-white">
+               
+                  <Link to={`/buyTickets/${movieId}`}> 
+                  <Button className="text-white" variant="danger">
                     Book Tickets
-                  </button>
+                  </Button></Link>
                 </div>
               </div>
             </div>

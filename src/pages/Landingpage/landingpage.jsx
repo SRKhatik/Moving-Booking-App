@@ -7,13 +7,13 @@ import { getAllMovies } from "../../api/movies.api";
 import { CSpinner } from "@coreui/react";
 import MovieList from "../../component/MovieList/MovieList";
 
-function Landingpage() {
-  const [moviesData, setMoviesData] = useState(null);
 
+function Landingpage() {
+  const [moviesData, setMoviesData] = useState([]);
   const fetchMovies = async () => {
     try {
       const movies = await getAllMovies();
-      setMoviesData(movies);
+      setMoviesData(movies.data);
     } catch (e) {
       console.log(e);
     }

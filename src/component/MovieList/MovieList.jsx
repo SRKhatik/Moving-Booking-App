@@ -1,13 +1,13 @@
 import MovieCard from "../MovieCard/MovieCard";
 import React from "react";
+function MovieList(props){
 
-function MovieList(props) {
-  const renderMovies = (movies) => {
-    return movies.map((movie,index) => {
-      return <MovieCard key={index} movie={movie} />;
-    });
-  };
-
+  const renderMovies = (movies)=>{
+      return  moviesData.map((movie)=>{
+          return <MovieCard movie={movie} />
+         }) ;
+  }
+  const {moviesData} = props;
   return (
     <div className="py-3">
 <h1 className="m-5" style={{ color: "black", fontWeight: 900, textDecoration: "underline" }}>RECOMMENDED MOVIES</h1>
@@ -16,7 +16,7 @@ function MovieList(props) {
         style={{ flexFlow: "wrap" }}
         className=" d-flex justify-content-center"
       >
-        {renderMovies(props.moviesData)}
+        {renderMovies()}
       </div>
     </div>
   );
