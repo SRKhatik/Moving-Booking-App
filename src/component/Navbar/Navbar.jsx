@@ -4,10 +4,20 @@ import { isUserLoggedIn } from "../../utils/helper";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/MBA5.png";
 import Toggle from "../Toogle/Toogle";
+import { useState } from "react";
 
-const Navbar = () => {
+const Navbar = ({filterMovies}) => {
   const isLoggedIn = isUserLoggedIn();
   const navigate = useNavigate();
+  const [searchValue, onSearchChange] = useState("")
+
+const onInputChange=(e)=>{
+onSearchChange(e.target.value)
+if(filterMovies){
+  filterMovies(e.target.value)
+}
+}
+
 
   const onAuthButtonClick = () => {
     if (isLoggedIn) {
@@ -28,7 +38,7 @@ const Navbar = () => {
         </div>
 
         <div className="w-50">
-          <Form.Control size="sm" type="text" placeholder="Search Movie"/>
+          <Form.Control size="sm" type="text" placeholder="Search Movie" input={searchValue} onChange={onInputChange}/>
         </div>
 
         <Toggle />

@@ -5,16 +5,14 @@ import { useParams } from "react-router-dom";
 import { getMovieById } from "../../api/movies.api";
 import { Spinner } from "react-bootstrap";
 import TheatreDetails from "../../component/TheatreDetails/TheatreDetails";
-import { themeContext } from "../../Context";
-import { useContext } from "react";
+
 
 const MovieTheatres = () => {
   const { movieId: selectedMovie } = useParams();
   const [theatresDetail, setTheatersDetails] = useState();
   const [movieDetails, setMovieDetails] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const theme =useContext(themeContext)
-  const darkMode = theme.state.darkMode;
+ 
 
   const getTheatres = async () => {
     const theatresData = await getTheatresForAMovie(selectedMovie);
@@ -36,10 +34,7 @@ const MovieTheatres = () => {
   }, []);
 
   return (
-    <div style={{
-      background : darkMode? 'black':'',
-      color:darkMode? "white":"",
-    }}>
+    <div>
       <Navbar />
     
       {isLoading && <Spinner/>}

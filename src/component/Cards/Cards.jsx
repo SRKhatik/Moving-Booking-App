@@ -5,7 +5,7 @@ function Cards() {
 
     <div className="row mt-5 p-2 justify-content-center text-center flex-sm-wrap" style={{background: "rgba(0, 0, 0, 0.1)",
     backdropFilter: "blur(10px)"}}>
-      <h1 style={{ color: "black", fontWeight: 900, textDecoration: "underline" }}>BOOK YOUR FAVORITE SHOW NOW !!</h1>
+      <h1 style={{ fontWeight: 900, textDecoration: "underline" }}>BOOK YOUR FAVORITE SHOW NOW !!</h1>
       
     <div 
       className="card m-2 row justify-content-center"

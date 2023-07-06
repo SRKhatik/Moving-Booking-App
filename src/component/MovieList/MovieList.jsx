@@ -10,7 +10,7 @@ function MovieList(props){
   const {moviesData} = props;
   return (
     <div className="py-3">
-<h1 className="m-5" style={{ color: "black", fontWeight: 900, textDecoration: "underline" }}>RECOMMENDED MOVIES</h1>
+<h1 className="m-5" style={{ fontWeight: 900, textDecoration: "underline" }}>RECOMMENDED MOVIES</h1>
 
       <div
         style={{ flexFlow: "wrap" }}

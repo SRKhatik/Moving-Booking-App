@@ -1,0 +1,158 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.fullView {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-size: 14px;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.Movies {
+  margin-bottom: 1rem;
+}
+
+.Movies select {
+  appearance: none;
+  background: white;
+  font-size: 14px;
+  margin-left: 12px;
+  border-radius: 4px;
+  padding: 6px 24px;
+}
+
+.ShowCase {
+  margin: 0 0 48px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  background: #f5f849;
+  padding: 12px;
+  color: #0a0808;
+}
+
+.ShowCase li {
+  margin: 0 12px;
+}
+
+.Cinema {
+  margin-bottom: 1rem;
+  perspective: 400px;
+  display: grid;
+  place-items: center;
+  grid-gap: 4rem;
+}
+
+.Cinema .screen {
+  height: 150px;
+  background-image: url("../../img/poster.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  transform: rotateX(-30deg) scale(1.1);
+  box-shadow: 0 3px 10px 2px;
+}
+
+.Cinema .seats {
+  display: grid;
+  grid-gap: 6px;
+  grid-template-columns: repeat(8, min-content);
+  align-items: center;
+ 
+}
+
+.Cinema .seats .seat:nth-of-type(8n + 2) {
+  margin-right: 20px;
+}
+
+.Cinema .seats .seat:nth-of-type(8n + 6) {
+  margin-right: 20px;
+}
+
+.Cinema .seats .seat:not(.occupied):hover,
+.Cinema .seats .seat:not(.occupied):focus {
+  cursor: pointer;
+  background: #27e615;
+  transform: scale(1.2);
+}
+
+.Cinema .seats .seat.selected::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  background: transparent;
+  border: 1px solid #0df019;
+  animation: show-off 0.8s;
+  visibility: hidden;
+}
+
+@keyframes show-off {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+.seat {
+  display: inline-block;
+  background: #302a2a;
+  width: 16px;
+  height: 12px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+  top: 1px;
+}
+
+.seat.selected {
+  background: #0ae715 !important;
+}
+
+.seat.occupied {
+  background: #f10909;
+}
+
+.info .count {
+  color: #7bc47f;
+}
+
+.info .total {
+  color: #7bc47f;
+}
+@media (max-width: 768px) {
+  .Cinema .screen {
+    height: 150px;
+  }
+}
+
+@media (max-width: 420px) {
+  .Cinema .screen {
+    height: 150px;
+    width: 80%;
+  }
+}

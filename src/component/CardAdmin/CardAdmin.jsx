@@ -37,7 +37,7 @@ function CardsList(props) {
           title="Bookings"
         />
       </div>
-      <div className="col">
+      <div className="col ">
         <CWidgetComponent
           id={keys.USER}
           value={counterInfo.users}

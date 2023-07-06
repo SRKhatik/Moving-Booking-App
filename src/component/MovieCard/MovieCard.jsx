@@ -26,7 +26,7 @@ function MovieCard({movie}){
 
     return  <>
       
-     <Card className='mx-3 my-3' style={{ width: '18rem',cursior:"pointer",backgroundColor:"black",color:"gray"}} >
+     <Card className='mx-3 my-3 bg-dark' style={{ width: '18rem',cursior:"pointer",color:"gray"}} >
    
       <Card.Img style={{height:"25rem"}} variant="top" src={posterUrl} />
       <Card.Body>

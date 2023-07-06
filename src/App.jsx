@@ -8,7 +8,8 @@ import MovieTheatres from "./pages/MovieTheatres/MovieTheatres";
 import { themeContext } from "./Context";
 import { useContext } from "react";
 import Admin from "./pages/Admin/Admin";
-
+import SeatBooking from "./pages/SeatBooking/SeatBooking";
+import AuthHOC from "./hoc/AuthHOC";
 
 function App() {
   const theme =useContext(themeContext)
@@ -16,7 +17,7 @@ function App() {
   return (
     <div className="App"
     style={{
-      background : darkMode? 'gray':'',
+      background : darkMode? 'black':'',
       color:darkMode? "white":"",
     }}>
     <Router>
@@ -25,7 +26,8 @@ function App() {
         <Route exact path="/register" />
         <Route exact path="/" element={<Landingpage/>} />
         <Route exact path="/movie/:movieId/details" element={<MovieDetails/> } />
-        <Route exact path="/buyTickets/:movieId" element={<MovieTheatres/> } />
+        <Route exact path="/buyTickets/:movieId" element={<AuthHOC><MovieTheatres/> </AuthHOC>} />
+        <Route exact path="/buyTickets/:movieId/:theatreId" element={<AuthHOC> <SeatBooking/> </AuthHOC>}/>
         <Route exact path="/admin" element={ <Admin/>} />
       </Routes>
     </Router>

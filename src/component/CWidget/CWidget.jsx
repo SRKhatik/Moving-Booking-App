@@ -8,7 +8,7 @@ const CWidget = ({ value, icon, title, text, id }) => {
   <CWidgetStatsC
     onClick={() => onWidgetClick(id)}
     style={{ cursor: "pointer" }}
-    color={show[id] ? "dark" : "danger"}
+    color={show[id] ? "success" : "danger"}
     progress={{ value }}
     icon={icon}
     text={text}

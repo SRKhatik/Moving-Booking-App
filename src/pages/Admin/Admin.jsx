@@ -99,7 +99,7 @@ const fetchBookings=async()=>{
   };
   return (
     <>
-      <div>
+      <div className="vw-100">
         <Navbar />
         <div className="container mt-5 mb-5 cantaier-fulid vh-100%">
           <h2 className="text-center">

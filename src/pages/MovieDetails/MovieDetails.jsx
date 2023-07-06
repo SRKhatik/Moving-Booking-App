@@ -23,7 +23,7 @@ function MovieDetails() {
   }, []);
 
   return (
-    <div>
+    <div className="vw-100">
       <Navbar />
       {movieDetails ? (
         <>
@@ -32,7 +32,7 @@ function MovieDetails() {
               url={movieDetails.trailerUrl}
               controls={true}
               width="100%"
-              height="50vh"
+              height="60vh"
             />
           </div>
     
@@ -41,12 +41,12 @@ function MovieDetails() {
               <img
                 src={movieDetails.posterUrl}
                 width={300}
-                height={500}
+                height={400}
                 alt="Movie Poster"
               />
             </div>
             <br />
-            <div className="col-lg-9 col-md-12 ">
+            <div className="col-lg-9 col-md-12 justify-content-start ">
               <h2 className="font-weight-bold">About the Movie</h2>
 
               <div>
@@ -64,10 +64,10 @@ function MovieDetails() {
                 <hr />
 
                 <h3>{movieDetails.name}</h3>
-                <h6 className="text-justify">
+                <h6 >
                   Directed by {movieDetails.director}
                 </h6>
-                <h6 className="text-justify">
+                <h6 >
                   Released On {movieDetails.releaseDate}
                 </h6>
 
@@ -75,11 +75,11 @@ function MovieDetails() {
 
                 <div>
                   <h5>Cast</h5>
-                  <ul>
+                  <p>
                     {movieDetails.casts.map((name, index) => (
                       <li key={index}>{name}</li>
                     ))}
-                  </ul>
+                  </p>
                 </div>
 
                 <div className="my-3">
