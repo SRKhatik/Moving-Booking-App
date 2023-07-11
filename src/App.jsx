@@ -11,6 +11,7 @@ import Admin from "./pages/Admin/Admin";
 import SeatBooking from "./pages/SeatBooking/SeatBooking";
 import AuthHOC from "./hoc/AuthHOC";
 
+
 function App() {
   const theme =useContext(themeContext)
   const darkMode = theme.state.darkMode;
@@ -23,12 +24,14 @@ function App() {
     <Router>
       <Routes>
         <Route exact path="/login" element={<Auth/>} />
+        <Route exact path="signUp" element={<Auth/>} />
         <Route exact path="/register" />
         <Route exact path="/" element={<Landingpage/>} />
         <Route exact path="/movie/:movieId/details" element={<MovieDetails/> } />
         <Route exact path="/buyTickets/:movieId" element={<AuthHOC><MovieTheatres/> </AuthHOC>} />
         <Route exact path="/buyTickets/:movieId/:theatreId" element={<AuthHOC> <SeatBooking/> </AuthHOC>}/>
         <Route exact path="/admin" element={ <Admin/>} />
+      
       </Routes>
     </Router>
     </div>

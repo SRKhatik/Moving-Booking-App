@@ -54,7 +54,7 @@ function MovieCard({movie}){
       <Card.Body>
         <div style={{fontSize:"1.5rem"}} className='d-flex align-items-center justify-content-between'>
         <i className="bi bi-heart-fill justify-content-around" onClick={like} style={{color: (isLiked)? "red":"gray"}}/> {count }
-        <Card.Link href={`/movie/${_id}/details`}>SEE TRAILER <i className="bi bi-arrow-right-circle-fill"></i></Card.Link>
+        <Card.Link  href={`/movie/${_id}/details`}>SEE TRAILER <i className="bi bi-arrow-right-circle-fill"></i></Card.Link>
         </div> 
       </Card.Body>
     </Card>

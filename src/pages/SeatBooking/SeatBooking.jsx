@@ -7,7 +7,7 @@ import { Button, Spinner } from "react-bootstrap";
 import { getTheatresById } from "../../api/theatre.api";
 import { getMovieById } from "../../api/movies.api";
 import "./SeatBooking.css";
-import { createBooking } from "../../api/booking.api";
+import {createBooking } from "../../api/booking.api";
 
 const SeatBooking = () => {
   const { movieId, theatreId } = useParams();

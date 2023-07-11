@@ -2,14 +2,14 @@ import { UnAuthenticated } from "../component/UnAuthenticated/UnAuthenticated";
 
 const AuthHOC =(props)=>{
     //creating Authentication
-    const user = localStorage.getItem("userID")
+    const user = localStorage.getItem("userId")
     const token = localStorage.getItem("token")
 
 
     if(!token || !user)
         return <UnAuthenticated/>
 
-    return <div className="d-flex justify-content-center align-items-center">
+    return <div>
         {props.children}
     </div>
 }

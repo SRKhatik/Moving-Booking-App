@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button  from "react-bootstrap/Button";
 import Modal from 'react-bootstrap/Modal';
+import { Link } from "react-router-dom";
 
 const Payments =({show, setShow, theatresDetail, movieDetails, selectedSeats, confirmBooking, bookingDetails, closeModel })=>{
    const handleClose = closeModel;
@@ -40,7 +41,7 @@ const Payments =({show, setShow, theatresDetail, movieDetails, selectedSeats, co
                     </div>
     
                        <div className='col-3 text-danger'>
-                        <h3> Rs {movieDetails.price * selectedSeats.length} </h3>
+                        <h4> Rs {movieDetails.price * selectedSeats.length} </h4>
                     </div>
                 </div>
     
@@ -61,7 +62,10 @@ const Payments =({show, setShow, theatresDetail, movieDetails, selectedSeats, co
                                 <h5> Booking Confirmed !</h5>
                                 <small> Booking Id :  </small>
                                 <p className='fw-bolder'> {bookingDetails._id} </p>
-    
+
+                                <Link to="/login">
+                                    <Button  variant="info" >HOME</Button>
+                                </Link>
                             </div>
                         ):
     

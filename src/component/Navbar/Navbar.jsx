@@ -5,19 +5,21 @@ import { useNavigate } from "react-router-dom";
 import logo from "../../assets/MBA5.png";
 import Toggle from "../Toogle/Toogle";
 import { useState } from "react";
+import { TOKEN } from "../../utils/constants";
 
-const Navbar = ({filterMovies}) => {
-  const isLoggedIn = isUserLoggedIn();
+const Navbar = ({ filterMovies }) => {
+  const isLoggedIn = isUserLoggedIn(false);
   const navigate = useNavigate();
-  const [searchValue, onSearchChange] = useState("")
+  const [searchValue, onSearchChange] = useState("");
 
-const onInputChange=(e)=>{
-onSearchChange(e.target.value)
-if(filterMovies){
-  filterMovies(e.target.value)
-}
-}
+  const token = localStorage.getItem(TOKEN);
 
+  const onInputChange = (e) => {
+    onSearchChange(e.target.value);
+    if (filterMovies) {
+      filterMovies(e.target.value);
+    }
+  };
 
   const onAuthButtonClick = () => {
     if (isLoggedIn) {
@@ -38,15 +40,27 @@ if(filterMovies){
         </div>
 
         <div className="w-50">
-          <Form.Control size="sm" type="text" placeholder="Search Movie" input={searchValue} onChange={onInputChange}/>
+          <Form.Control
+            size="sm"
+            type="text"
+            placeholder="Search Movie"
+            input={searchValue}
+            onChange={onInputChange}
+          />
         </div>
 
         <Toggle />
 
         <div>
-          <Button onClick={onAuthButtonClick} variant="danger">
-            {isLoggedIn ? "Logout" : "Login"}
-          </Button>
+          {!token ? (
+           <Button onClick={onAuthButtonClick} variant="primary">
+           Login
+           </Button>
+          ) : (
+           <Button onClick={onAuthButtonClick} variant="danger">
+              Logout
+           </Button>
+          )}
         </div>
       </div>
     </div>

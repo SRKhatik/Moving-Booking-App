@@ -46,7 +46,7 @@ function MovieDetails() {
               />
             </div>
             <br />
-            <div className="col-lg-9 col-md-12 justify-content-start ">
+          <div className="col-lg-9 col-md-12  ">
               <h2 className="font-weight-bold">About the Movie</h2>
 
               <div>
