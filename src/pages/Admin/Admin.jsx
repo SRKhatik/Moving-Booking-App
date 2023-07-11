@@ -111,10 +111,10 @@ const fetchBookings=async()=>{
             <CardsList counterInfo={counterInfo} />
           </WidgetContext.Provider>
           <div>
-            {showTheatresTable && <TheatresTable theatresList={theatresList} />}
-            {showMoviesTable && <MoviesTable moviesList={moviesList} />}
+            {showTheatresTable && <TheatresTable theatresList={theatresList} setTheatersList={setTheatresList} />}
+            {showMoviesTable && <MoviesTable moviesList={moviesList}  />}
             {showBookingsTable && <BookingsTable bookingsList={bookingsList} />}
-            {showUsersTable && <UsersTable usersList={usersList} />}
+            {showUsersTable && <UsersTable usersList={usersList}/>}
           </div>
         </div>
       </div>
