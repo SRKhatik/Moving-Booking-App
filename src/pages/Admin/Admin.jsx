@@ -30,6 +30,8 @@ const Admin = () => {
   const [showBookingsTable, setShowBookingsTable] = useState(false);
   const [showUsersTable, setShowUsersTable] = useState(false);
 
+ 
+
   const show = {};
   show[keys.THEATRE] = showTheatresTable;
   show[keys.MOVIE] = showMoviesTable;

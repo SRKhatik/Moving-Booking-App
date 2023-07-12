@@ -4,8 +4,8 @@ import { Building, CardList, Film, PeopleFill } from "react-bootstrap-icons";
 import {keys} from "../../utils/constants"
 
 function CardsList(props) {
-
   const { counterInfo } = props;
+
   return (
     <div className="row px-1">
       <div className="col">
@@ -51,5 +51,6 @@ function CardsList(props) {
     </div>
   );
 }
+
 
 export default CardsList;
